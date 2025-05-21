@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Exibe mensagem de sucesso e redireciona para a página de login
         responseDiv.textContent = 'Cadastro realizado com sucesso! Redirecionando para login...';
         setTimeout(function() {
-            window.location.href = './login.html';
+            window.location.href = './loginmotorista.html';
         }, 2000);
     });
 });
