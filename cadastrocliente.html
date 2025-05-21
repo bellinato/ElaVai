@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente - Seu Uber Exclusivo para Mulheres</title>
+    <link rel="stylesheet" href="./styles/cadastrocliente.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cadastro Cliente</h1>
+        </header>
+        <form id="cadastroClienteForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div id="response"></div>
+    </div>
+    <script src="./scripts/cadastrocliente.js"></script>
+</body>
+</html>
