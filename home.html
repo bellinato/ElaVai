@@ -1,24 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Seu Uber Exclusivo para Mulheres</title>
-    <link rel="stylesheet" href="./styles/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Táxi Seguro para Mulheres – Serviço confiável, seguro e exclusivo.">
+  <title>Táxi Seguro para Mulheres</title>
+  <link rel="stylesheet" href="styles/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Modal para escolha de perfil -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <h2>Escolha sua opção</h2>
-            <p>Você deseja entrar como:</p>
-            <div class="modal-buttons">
-                <button id="cliente-btn">Cliente</button>
-                <button id="motorista-btn">Motorista</button>
-            </div>
-        </div>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <h1>Táxi Seguro</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#como-funciona">Como Funciona</a></li>
+          <li><a href="#seguranca">Segurança</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="btn-cta">Solicitar Táxi</button>
     </div>
+  </header>
 
-    <script src="./scripts/home.js"></script>
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container">
+      <h1>Táxi exclusivo para mulheres</h1>
+      <p>Viaje com segurança, conforto e tranquilidade.</p>
+      <a href="#solicitacao" class="btn-banner">Peça agora</a>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section id="como-funciona" class="section">
+    <div class="container">
+      <h2>Como Funciona</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>1. Cadastro</h3>
+          <p>Crie sua conta em poucos segundos e tenha acesso a serviços exclusivos.</p>
+        </div>
+        <div class="step">
+          <h3>2. Solicitação</h3>
+          <p>Peça um táxi com motorista mulher próxima de você de forma simples e rápida.</p>
+        </div>
+        <div class="step">
+          <h3>3. Segurança</h3>
+          <p>Acompanhe seu trajeto em tempo real e viaje com total tranquilidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Segurança -->
+  <section id="seguranca" class="section destaque">
+    <div class="container">
+      <h2>Segurança em primeiro lugar</h2>
+      <ul>
+        <li>✔ Motoristas verificadas e confiáveis</li>
+        <li>✔ Rastreio em tempo real e assistência 24h</li>
+        <li>✔ Suporte imediato em emergências</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section">
+    <div class="container">
+      <h2>Fale Conosco</h2>
+      <p>Dúvidas, sugestões ou parcerias? Estamos aqui para ajudar!</p>
+      <a href="mailto:contato@taxiseguro.com.br" class="email">contato@taxiseguro.com.br</a>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Táxi Seguro - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/home.js"></script>
 </body>
 </html>
