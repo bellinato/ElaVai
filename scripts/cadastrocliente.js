@@ -8,20 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
         cadastroForm.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            const clienteData = {
-                nome: cadastroForm.nome.value,
-                email: cadastroForm.email.value,
-                telefone: cadastroForm.telefone.value,
-                senha: cadastroForm.senha.value,
+            // Cria o objeto de cadastro com os mesmos nomes esperados no login
+            const cadastroData = {
+                nome: cadastroForm.nome.value.trim(),
+                senha: cadastroForm.senha.value,  // Certifique-se de que o campo "senha" existe
+                email: cadastroForm.email.value.trim() // Se desejar salvar email também
             };
 
-            // Salva os dados do cliente no localStorage
-            localStorage.setItem('clienteData', JSON.stringify(clienteData));
+            // Salva os dados usando a chave "cadastroData"
+            localStorage.setItem('cadastroData', JSON.stringify(cadastroData));
 
-            // Limpa o formulário
+            // Opcional: limpa o formulário e exibe uma mensagem
             cadastroForm.reset();
-
-            // Exibe mensagem de sucesso e redireciona para a página de login
             responseDiv.textContent = 'Cadastro realizado com sucesso! Redirecionando para login...';
             setTimeout(function() {
                 window.location.href = './login.html';
