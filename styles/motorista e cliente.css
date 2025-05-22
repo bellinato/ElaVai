@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ffe0f0, #fff0f5);
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0); /* Very light pink gradient */
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,25 +10,33 @@ body {
 }
 
 .container {
-    background: #fff;
-    border-radius: 12px;
+    background: rgba(255, 192, 203, 0.3); /* Light pink with transparency */
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 
+        0 8px 32px rgba(233, 30, 99, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
     max-width: 420px;
     width: 90%;
+    border: 1px solid rgba(233, 30, 99, 0.2);
 }
 
 header h1 {
-    color: #e91e63;
-    margin-bottom: 10px;
-    font-size: 2em;
+    color: #c2185b; /* Darker pink for contrast */
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Enhanced text shadow */
 }
 
 header p {
-    color: #666;
+    color: #424242; /* Dark gray for better readability */
     margin-bottom: 30px;
     font-size: 1.1em;
+    line-height: 1.6;
 }
 
 .button-group {
@@ -38,18 +46,22 @@ header p {
 }
 
 .button-group button {
-    background-color: #e91e63;
+    background-color: rgba(233, 30, 99, 0.8); /* More solid pink for buttons */
     color: #fff;
-    border: none;
+    border: 1px solid rgba(233, 30, 99, 0.5);
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 25px;
     font-size: 1.1em;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .button-group button:hover {
-    background-color: #d81b60;
-    transform: scale(1.02);
+    background-color: rgba(233, 30, 99, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+    border-color: rgba(233, 30, 99, 0.7);
 }
