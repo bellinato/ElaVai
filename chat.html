@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat com Clientes</title>
+    <link rel="stylesheet" href="./styles/chat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .chat-main {
+            display: flex;
+            height: 80vh;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+        .contacts-list {
+            width: 260px;
+            background: #fafafa;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact {
+            padding: 18px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: background 0.2s;
+        }
+        .contact.active, .contact:hover {
+            background: #ffe0f0;
+        }
+        .contact-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #e91e63;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-name {
+            font-weight: 500;
+        }
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-header {
+            background: #e91e63;
+            color: #fff;
+            padding: 18px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .chat-window {
+            flex: 1;
+            padding: 18px;
+            background: #f5f5f5;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .msg {
+            max-width: 75%;
+            padding: 10px 16px;
+            border-radius: 18px;
+            font-size: 1em;
+            word-break: break-word;
+        }
+        .msg.motorista {
+            background: #e91e63;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .msg.cliente {
+            background: #fff;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            border: 1px solid #eee;
+        }
+        .chat-form {
+            display: flex;
+            padding: 12px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
+        #chatInput {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            margin-right: 8px;
+        }
+        .chat-form button {
+            background: #e91e63;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            .chat-main { flex-direction: column; height: 95vh; }
+            .contacts-list { width: 100%; flex-direction: row; border-right: none; border-bottom: 1px solid #eee; overflow-x: auto; }
+            .contact { flex: 1 0 120px; border-bottom: none; border-right: 1px solid #eee; flex-direction: column; align-items: center; }
+            .chat-area { flex: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-main">
+        <div class="contacts-list" id="contactsList">
+            <!-- Contatos serão inseridos aqui via JS -->
+        </div>
+        <div class="chat-area">
+            <header class="chat-header" id="chatHeader">
+                <span id="chatWith">Selecione um contato</span>
+                <a href="homemotorista.html" class="back-btn" title="Voltar">&#8592; Voltar</a>
+            </header>
+            <div id="chatWindow" class="chat-window"></div>
+            <form id="chatForm" class="chat-form" style="display:none;">
+                <input type="text" id="chatInput" placeholder="Digite sua mensagem..." autocomplete="off" required>
+                <button type="submit">&#9658;</button>
+            </form>
+        </div>
+    </div>
+    <script src="./scripts/chat.js"></script>
+</body>
+</html>
