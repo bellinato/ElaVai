@@ -1,7 +1,14 @@
-// Exemplo de ação com botão (você pode expandir isso depois)
+document.addEventListener('DOMContentLoaded', function() {
+    const clienteBtn = document.getElementById('cliente-btn');
+    const motoristaBtn = document.getElementById('motorista-btn');
 
-document.querySelector(".btn-cta").addEventListener("click", () => {
-    alert("Redirecionando para o formulário de solicitação...");
-    // Aqui você pode redirecionar ou abrir um modal futuramente
-  });
-  
+    clienteBtn.addEventListener('click', function() {
+        // Redireciona para a página do cliente
+        window.location.href = './cliente.html';
+    });
+
+    motoristaBtn.addEventListener('click', function() {
+        // Redireciona diretamente para a página do motorista
+        window.location.href = './motorista.html';
+    });
+});
