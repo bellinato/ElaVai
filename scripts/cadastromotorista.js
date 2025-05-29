@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('cadastroMotoristaForm');
     const responseDiv = document.getElementById('response');
+    const irLoginBtn = document.getElementById('irLoginBtn');
 
     if (form) {
         form.addEventListener('submit', function(event) {
@@ -19,6 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Redireciona para o login do motorista
                 window.location.href = './loginmotorista.html';
             }, 2000);
+        });
+    }
+
+    if (irLoginBtn) {
+        irLoginBtn.addEventListener('click', function() {
+            window.location.href = './loginmotorista.html';
         });
     }
 });
