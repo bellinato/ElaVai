@@ -1,14 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const clienteBtn = document.getElementById('cliente-btn');
-    const motoristaBtn = document.getElementById('motorista-btn');
+// Exemplo de ação com botão (você pode expandir isso depois)
 
-    clienteBtn.addEventListener('click', function() {
-        // Redireciona para a página do cliente
-        window.location.href = './cliente.html';
+document.addEventListener('DOMContentLoaded', () => {
+  // Seleciona todos os botões de solicitação de táxi
+  const solicitarTaxiButtons = document.querySelectorAll('.btn-cta');
+  
+  solicitarTaxiButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      window.location.href = "./chame.taxi.html";
     });
+  });
 
-    motoristaBtn.addEventListener('click', function() {
-        // Redireciona diretamente para a página do motorista
-        window.location.href = './motorista.html';
+  const btnBanner = document.querySelector('.btn-banner');
+  if (btnBanner) {
+    btnBanner.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = "./chametaxi.html";
     });
+  }
 });
