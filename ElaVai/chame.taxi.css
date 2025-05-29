@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #ff69b4;       /* Rosa padrão */
+  --secondary-color: #ff1493;     /* Rosa escuro para hover */
+  --accent-color: #d81b60;        /* Cor de destaque para labels */
+  --background-color: #fdfdfd;
+  --text-color: #333;
+  --form-bg: #fff0f5;             /* Fundo suave para formulários */
+  --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset e Configurações Básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Container Geral */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Cabeçalho da Página (se aplicável) */
+header.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header.page-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+header.page-header h1:hover {
+  transform: scale(1.05);
+}
+
+/* Formulário de Solicitação de Táxi */
+form#taxi-request-form {
+  background-color: var(--form-bg);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form#taxi-request-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+form#taxi-request-form .form-group {
+  margin-bottom: 20px;
+}
+
+form#taxi-request-form label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--accent-color);
+}
+
+form#taxi-request-form input[type="text"],
+form#taxi-request-form input[type="email"],
+form#taxi-request-form input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form#taxi-request-form input[type="text"]:focus,
+form#taxi-request-form input[type="email"]:focus,
+form#taxi-request-form input[type="tel"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+  outline: none;
+}
+
+form#taxi-request-form button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+form#taxi-request-form button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  header.page-header h1 {
+    font-size: 2rem;
+  }
+  
+  form#taxi-request-form {
+    padding: 20px;
+  }
+}
