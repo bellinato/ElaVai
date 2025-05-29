@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
     const responseDiv = document.getElementById('response');
     const cadastroBtn = document.getElementById('cadastro-btn');
+    const irLoginBtn = document.getElementById('ir-login');
 
     if (cadastroForm) {
         cadastroForm.addEventListener('submit', function(event) {
@@ -54,9 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (cadastroBtn) {
-        cadastroBtn.addEventListener('click', function() {
-            window.location.href = './cadastrocliente.html';
+
+    
+  if (irLoginBtn) {
+        irLoginBtn.addEventListener('click', function() {
+            window.location.href = './login.html';
         });
     }
 });
