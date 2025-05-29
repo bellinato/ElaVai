@@ -191,7 +191,7 @@ button[type="submit"]:hover {
 }
 
 #next-btn:hover:not(:disabled) {
-    background-color: #8257e5;
+    background-color: #e557cd;
     transform: translateY(-2px);
 }
 
