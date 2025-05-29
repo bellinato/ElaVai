@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #fce4ec, #f8bbd0); /* Very light pink gradient */
+    background: linear-gradient(135deg, #e1bee7, #9c27b0); /* Purple gradient */
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,26 +10,26 @@ body {
 }
 
 .container {
-    background: rgba(255, 192, 203, 0.3); /* Light pink with transparency */
+    background: rgba(255, 255, 255, 0.95); /* White background */
     backdrop-filter: blur(12px);
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
     box-shadow: 
-        0 8px 32px rgba(233, 30, 99, 0.2),
-        0 0 0 1px rgba(255, 255, 255, 0.3);
+        0 8px 32px rgba(123, 31, 162, 0.2),
+        0 0 0 1px rgba(123, 31, 162, 0.1);
     max-width: 420px;
     width: 90%;
-    border: 1px solid rgba(233, 30, 99, 0.2);
+    border: 1px solid rgba(123, 31, 162, 0.2);
 }
 
 header h1 {
-    color: #c2185b; /* Darker pink for contrast */
+    color: #7b1fa2; /* Purple text */
     margin-bottom: 15px;
     font-size: 2.2em;
     font-weight: 300;
     letter-spacing: 2px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Enhanced text shadow */
+    text-shadow: 0 2px 8px rgba(123, 31, 162, 0.2);
 }
 
 header p {
@@ -46,22 +46,20 @@ header p {
 }
 
 .button-group button {
-    background-color: rgba(233, 30, 99, 0.8); /* More solid pink for buttons */
+    background-color: #7b1fa2; /* Solid purple buttons */
     color: #fff;
-    border: 1px solid rgba(233, 30, 99, 0.5);
+    border: none;
     padding: 15px;
     border-radius: 25px;
     font-size: 1.1em;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(123, 31, 162, 0.2);
 }
 
 .button-group button:hover {
-    background-color: rgba(233, 30, 99, 0.8);
+    background-color: #6a1b9a;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
-    border-color: rgba(233, 30, 99, 0.7);
+    box-shadow: 0 5px 15px rgba(123, 31, 162, 0.3);
 }
