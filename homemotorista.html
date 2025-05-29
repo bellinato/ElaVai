@@ -5,8 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Motorista - Seu Uber Exclusivo para Mulheres</title>
     <link rel="stylesheet" href="./styles/homemotorista.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
+    <style>
+        /* Chat Modal estilo WhatsApp/Messenger */
+        #chatModal {
+            display: none;
+            position: fixed;
+            z-index: 200;
+            right: 30px;
+            bottom: 30px;
+            width: 350px;
+            max-width: 95vw;
+            height: 500px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #chatModal.active { display: flex; }
+        #chatHeader {
+            background: #e91e63;
+            color: #fff;
+            padding: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #chatWindow {
+            flex: 1;
+            padding: 15px;
+            background: #f5f5f5;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .msg {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 1em;
+            word-break: break-word;
+        }
+        .msg.motorista {
+            background: #e91e63;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .msg.cliente {
+            background: #fff;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            border: 1px solid #eee;
+        }
+        #chatForm {
+            display: flex;
+            padding: 10px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
+        #chatInput {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            margin-right: 8px;
+        }
+        #closeChat {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+        #openChatBtn {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background: #e91e63;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 2em;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 150;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 600px) {
+            #chatModal { width: 98vw; height: 60vh; right: 1vw; bottom: 1vw; }
+            #openChatBtn { right: 10px; bottom: 10px; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,10 +115,7 @@
     <main>
         <section id="map-section">
             <h2>Mapa</h2>
-            <div id="map-container">
-                <!-- Placeholder para mapa. Integre sua API de mapas aqui -->
-                <p>Mapa carregando...</p>
-            </div>
+            <div id="map-container" style="height: 300px;"></div>
             <div id="ride-request">
                 <p>Nova solicitação de corrida</p>
                 <button id="acceptBtn">Aceitar</button>
@@ -30,22 +126,27 @@
             <h2>Navegação</h2>
             <button id="startNavBtn">Iniciar Navegação até o destino</button>
         </section>
-        <section id="chat-section">
-            <h2>Chat com Cliente</h2>
-            <div id="chat-window">
-                <!-- Mensagens aparecerão aqui -->
-            </div>
-            <form id="chatForm">
-                <input type="text" id="chatInput" placeholder="Digite sua mensagem..." required>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
         <section id="status-section">
             <h2>Status da Corrida</h2>
             <p id="rideStatus">Esperando solicitação...</p>
         </section>
     </main>
     
+    <!-- Botão flutuante para abrir o chat -->
+    <a href="chat.html" id="openChatBtn" title="Abrir chat">&#128172;</a>
+    <!-- Modal do chat -->
+    <div id="chatModal">
+        <div id="chatHeader">
+            <span>Chat com Cliente</span>
+            <button id="closeChat" title="Fechar">&times;</button>
+        </div>
+        <div id="chatWindow"></div>
+        <form id="chatForm">
+            <input type="text" id="chatInput" placeholder="Digite sua mensagem..." autocomplete="off" required>
+            <button type="submit">&#9658;</button>
+        </form>
+    </div>
+
     <!-- Modal com perfil da motorista -->
     <div id="profileModal" class="modal">
         <div class="modal-content">
@@ -57,6 +158,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
     <script src="./scripts/homemotorista.js"></script>
 </body>
 </html>
